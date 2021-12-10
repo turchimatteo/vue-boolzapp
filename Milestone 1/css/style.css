@@ -1,0 +1,15 @@
+body {
+    background-color: #26b35a;
+}
+main {
+    height: 90vh;
+    width: calc(100% - 300px);
+    background-color: white;
+    position: relative;
+    top: 30px;
+    left: 150px;
+}
+.test {
+    border: 1px solid red;
+    height: 90vh;
+}
