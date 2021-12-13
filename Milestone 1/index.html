@@ -6,22 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boozlapp</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-    <main>
-        <div class="row">
-            <div class="col-4">
-                <div class="test"></div>
-            </div>
-            <div class="col-8">
-                <div class="test"></div>
+    <div id="root">
+        <div class="wrapper">
+            <div class="container">
+                <div class="left-col">
+                    <div class="column-header">
+                        <div class="info-user">
+                            <div class="user-image">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="user-name">
+                                Nome Utente
+                            </div> 
+                        </div>
+                        <div class="user-icon">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="notification">
+                        <div class="notification-icon">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notification-text">
+                            Ricevi notifiche di nuovi messaggi
+                            <br>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <div class="search-container">
+                            <div class="search-icon">
+                                <i aria-hidden="true" class="fa fa-search"></i>
+                            </div>
+                            <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div class="contact">
+                            <div class="contact-info">
+                                <div class="contact-image">
+                                    <img src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-name">
+                                    Michele
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <div class="column-header">
+                        <div class="info-user">
+                            <div class="user-image">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="user-name">
+                                Nome Utente
+                            </div> 
+                        </div>
+                        <div class="user-icon">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>
