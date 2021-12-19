@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boozlapp</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="wrapper">
+            <div class="container">
+                <div class="left-col">
+                    <div class="column-header">
+                        <div class="info-user">
+                            <div class="user-image">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="user-name">
+                                Nome Utente
+                            </div> 
+                        </div>
+                        <div class="user-icon">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="notification">
+                        <div class="notification-icon">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notification-text">
+                            Ricevi notifiche di nuovi messaggi
+                            <br>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <div class="search-container">
+                            <div class="search-icon">
+                                <i aria-hidden="true" class="fa fa-search"></i>
+                            </div>
+                            <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div  v-for="(contact, index) in contacts" class="contact"  @click="changeContact(index)">
+                            <div class="contact-info">
+                                <div  class="contact-image">
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                                </div>
+                                <div class="contact-name">
+                                    {{ contact.name }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <div class="column-header">
+                        <div class="info-user">
+                            <div class="user-image">
+                                <img src="img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="user-name">
+                                Nome Utente
+                                <br>
+                                <span>Ultimo accesso oggi alle</span>
+                            </div> 
+                        </div>
+                        <div class="user-icon">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <div class="messages">
+                        <div  v-for="message in contacts[activeContact].messages" class="message" :class="message.status">
+                            {{ message.text }}
+                            <div class="date-message">
+                                {{ message.date }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-action">
+                        <div class="message-icon">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="message-text">
+                            <input type="text">
+                        </div>
+                        <div class="message-icon">
+                            <i class="fa fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
