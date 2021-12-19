@@ -1,9 +1,7 @@
 /* 
-Milestone 2
-Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, 
-visualizzare tutti i messaggi relativi al contatto attivo all’interno 
-del pannello della conversazione.
-Click sul contatto mostra la conversazione del contatto cliccato
+Milestone 3
+Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 */
 Vue.config.devtools = true;
 
@@ -101,6 +99,35 @@ const app = new Vue (
 				changeContact: function(index){
 					this.activeContact = index;
 					console.log(index);
+				},
+				writeMessage: function(){
+					this.contacts[this.activeChat].messages.push(
+					{
+						date: this.currentData(),
+						text: this.newMessage,
+						status: 'sent'
+					}
+				),
+	
+				this.newMessage = '';
+	
+				},
+	
+				botAnswer: function(){
+					setTimeout(() =>{
+						this.contacts[this.activeChat].messages.push(
+							{
+								date: this.currentData(),
+								text: 'ok',
+								status: 'received'
+							}
+						);
+					}, 1000);
+	
+				},
+	
+				currentData() {
+					return dayjs().format("DD/MM/YYYY HH:mm:ss")
 				},
 			},
 			

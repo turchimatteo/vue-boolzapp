@@ -92,7 +92,7 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="message-text">
-                            <input type="text">
+                            <input type="text" v-model="newMessage" @keyup.enter= "writeMessage(); botAnswer();">
                         </div>
                         <div class="message-icon">
                             <i class="fa fa-microphone"></i>
