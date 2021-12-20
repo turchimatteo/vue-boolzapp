@@ -10,6 +10,7 @@ const app = new Vue (
 		el: '#root',
 		data: {
 			activeContact: 0,
+			newMessage: '',
 			contacts: [
 				{
 					name: 'Michele',
@@ -95,42 +96,41 @@ const app = new Vue (
 					],
 				},
 			],
-			methods: {
-				changeContact: function(index){
-					this.activeContact = index;
-					console.log(index);
-				},
-				writeMessage: function(){
-					this.contacts[this.activeChat].messages.push(
-					{
-						date: this.currentData(),
-						text: this.newMessage,
-						status: 'sent'
-					}
-				),
-	
-				this.newMessage = '';
-	
-				},
-	
-				botAnswer: function(){
-					setTimeout(() =>{
-						this.contacts[this.activeChat].messages.push(
-							{
-								date: this.currentData(),
-								text: 'ok',
-								status: 'received'
-							}
-						);
-					}, 1000);
-	
-				},
-	
-				currentData() {
-					return dayjs().format("DD/MM/YYYY HH:mm:ss")
-				},
+		},
+		methods: {
+			changeContact: function(index){
+				this.activeContact = index;
+				console.log(index);
 			},
-			
-		}
+			writeMessage: function(){
+				this.contacts[this.activeChat].messages.push(
+				{
+					date: this.currentData(),
+					text: this.newMessage,
+					status: 'sent'
+				}
+			),
+
+			this.newMessage = '';
+
+			},
+
+			botAnswer: function(){
+				setTimeout(() =>{
+					this.contacts[this.activeChat].messages.push(
+						{
+							date: this.currentData(),
+							text: 'ok',
+							status: 'received'
+						}
+					);
+				}, 1000);
+
+			},
+
+			currentData() {
+				return dayjs().format("DD/MM/YYYY HH:mm:ss")
+			},
+		},
 	}
 )
